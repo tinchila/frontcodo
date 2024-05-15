@@ -131,14 +131,14 @@ Swal.fire({
   }
 
   // Crear Productos
-  const whiskyJDO = new Producto(1, "Whisky", "Jack Daniels", "N° 7", 13500, "img/WhiskyJackDaniels.png");
-  const whiskyJWR = new Producto(2, "Whisky", "Jhonnie Walker", "Red", 7000, "img/WhiskyJhonnieWalkerRed.png");
-  const whiskyJWB = new Producto(3, "Whisky", "Jhonnie Walker", "Black", 15000, "img/WhiskyJhonnieWalkerBlack.png");
-  const ginTO = new Producto(4, "Gin", "Tanqueray", "Original", 8000, "img/GinTanquerayOriginal.png");
-  const ginBS = new Producto(5, "Gin", "Bombay", "Shapire", 9000, "img/GinBombayShapire.png");
-  const ganciaAO = new Producto(6, "Gancia", "Americano", "Original", 1000, "img/GanciaAmericanoOriginal.png");
-  const fernetBO = new Producto(7, "Fernet" , "Branca" , "Original", 2200, "img/FernetBrancaOriginal.png");
-  const vodkaAO = new Producto(8, "Vodka" , "Absolut" , "Original", 6000, "img/VodkaAbsolutOriginal.png");
+  const whiskyJDO = new Producto(1, "Whisky", "Jack Daniels", "N° 7", 13500, "../img/WhiskyJackDaniels.png");
+  const whiskyJWR = new Producto(2, "Whisky", "Jhonnie Walker", "Red", 7000, "../img/WhiskyJhonnieWalkerRed.png");
+  const whiskyJWB = new Producto(3, "Whisky", "Jhonnie Walker", "Black", 15000, "../img/WhiskyJhonnieWalkerBlack.png");
+  const ginTO = new Producto(4, "Gin", "Tanqueray", "Original", 8000, "../img/GinTanquerayOriginal.png");
+  const ginBS = new Producto(5, "Gin", "Bombay", "Shapire", 9000, "../img/GinBombayShapire.png");
+  const ganciaAO = new Producto(6, "Gancia", "Americano", "Original", 1000, "../img/GanciaAmericanoOriginal.png");
+  const fernetBO = new Producto(7, "Fernet" , "Branca" , "Original", 2200, "../img/FernetBrancaOriginal.png");
+  const vodkaAO = new Producto(8, "Vodka" , "Absolut" , "Original", 6000, "../img/VodkaAbsolutOriginal.png");
 
   // Array's
   const productos = [whiskyJDO, whiskyJWR, whiskyJWB, ginTO, ginBS, ganciaAO, fernetBO, vodkaAO];

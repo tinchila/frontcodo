@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Consultas - Contactos</title>
+  </head>
+  <header>
+    <H1 class="text-center">Dry Law</H1>
+    <div id="menu">
+        <div class="navbar">
+                <ul class="navbar-list">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="./pages/tienda.html">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="./pages/.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="./pages/form.html">Contacto</a>
+                    </li>
+                </ul>
+        </div>
+        <div>
+            <button class="btn colorBoton" id="singIn">Sing In</button>
+            <button class="btn colorBoton" id="singUp">Sing Up</button>
+        </div>
+        <div id="clima">
+            <h2>Córdoba, Argentina</h2>
+            <div class="pronostico"></div>
+        </div> 
+    </div>
+</header>
+  <body>
+    <h1>Ingresa tu consulta sobre nuestras bebidas</h1>
+    <form id="contactForm">
+      <label for="name">Nombre y Apellido:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="type">Tipo de consulta:</label>
+      <select id="type" name="type" required>
+        <option value="">Seleccione uno...</option>
+        <option value="consulta">Consulta general</option>
+        <option value="pedido">Realizar pedido</option>
+      </select>
+
+      <label for="preference">Bebida:</label>
+      <select
+        id="preference"
+        name="preference"
+        required
+        onchange="updateBrandOptions()"
+      >
+        <option value="">Seleccione una bebida...</option>
+        <option value="Whisky">Whisky</option>
+        <option value="Gin">Gin</option>
+        <option value="Gancia">Gancia</option>
+        <option value="Fernet">Fernet</option>
+        <option value="Vodka">Vodka</option>
+      </select>
+
+      <label for="brand">Marca:</label>
+      <select id="brand" name="brand" required>
+        <option value="">Primero seleccione una marca...</option>
+      </select>
+      <br />
+      <br />
+      <label for="message">Consulta:</label>
+      <br />
+      <textarea
+        id="message"
+        name="message"
+        rows="10"
+        cols="100"
+        required
+      ></textarea
+      ><br /><br />
+      <label for="newsletter">Suscribirse al boletín de noticias:</label>
+      <input type="checkbox" id="newsletter" name="newsletter" /><br /><br />
+      <button type="submit">Enviar consulta</button>
+    </form>
+    <div id="messageNotification" style="display: none">Mensaje enviado</div>
+
+    <script src="../js/form.js"></script>
+  </body>
+</html>

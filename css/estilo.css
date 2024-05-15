@@ -1,171 +1,328 @@
-
-#menu{
-    display: flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content: space-between;
+/*NAVBAR*/
+#menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
 }
 
-.navbar-list{
-    display: flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content: space-between;
-    margin: 100px;
+.navbar-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  list-style: none;
+  font-family: "Indie Flower", cursive;
+  font-size: 17px;
+  color: white;
 }
 
+.nav-link.active.text-white{
+    font-size: 23px;
+}
 
+.btn-drop {
+  display: none;
+  cursor: pointer;
+}
+
+.logo-img {
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 60%;
+}
+
+/*HEADER*/
+
+header {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+  position: relative;
+  height: 280px;
+}
+header h1 {
+  font-size: 50px;
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 150px;
+}
+
+/*BODY*/
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+/*FOOTER*/
+.footer {
+  background-color: #222;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  height: 180px;
+}
+.footer-up {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3px;
+  pad: 5px;
+}
+.footer-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  text-decoration: none;
+  font-family: "Indie Flower", cursive;
+  font-size: 15px;
+}
+.footer-nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.logo-img-footer {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border-radius: 60%;
+}
+
+/*CART*/
+.carrito {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+  font-size: 28px;
+  margin: 0;
+  text-align: center;
+}
+
+.totalCompra {
+  text-align: center;
+}
+
+.botonesCompra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .imgProductos {
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
-    margin-top: 1rem;
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  margin-top: 1rem;
 }
 
 .card {
-    border: 1px solid gray;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+  font-size: 20px;
+  transition: transform 0.3s;
+  padding: 1rem;
+  text-align: center;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.colorBoton {
+  color: white;
+  background-color: black;
+  border: 1px solid gray;
+  padding: 5px 10px;
+  display: inline-block;
+  transition: 1s;
+  font-family: "Indie Flower", cursive;
+  text-decoration: none;
+}
+.colorBoton:hover {
+  color: #e86686;
+  border: 1px solid gray;
+}
+
+.button {
+  background-color: black;
+}
+
+/*FORMULARIO*/
+.formulario {
+  margin: 30px;
+  padding: 30px;
+  background-color: rgb(170, 166, 166);
+}
+.form-title {
+  text-align: center;
+}
+
+/*MEDIA QUERY*/
+@media (max-width: 1200px) {
+  .navbar-list {
+    gap: 30px;
+    justify-content: space-around;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1050px) {
+  #navbarList {
+    display: none;
+    position: absolute;
+    top: calc(55% + 10px);
+    right: 0;
+    transform: translateX(-10%);
+    background-color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 0;
+    flex-direction: column;
+  }
+
+  #toggleNavbar {
+    display: block;
+    background-color: #333;
+    border: none;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .drop-down-arrow {
+    height: 55px;
+    width: 55px;
+  }
+
+  .navbar-list {
     display: flex;
+    flex-direction: column; /* Cambiar dirección a vertical */
+    gap: 30px;
+    justify-content: space-around;
+    font-size: 13px;
+  }
+  .nav-link.active.text-white{
+    font-size: 18px;
+}
+
+  .boton-registro {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 0.5rem;
-    font-size: 20px;
-    transition: transform 0.3s;
-    padding: 1rem;
-    text-align: center;}
-    .card:hover {
-    transform: scale(1.1);
-    }
-    .colorBoton {
-        color: white;
-        background-color: black;
-        border: 1px solid gray;
-        padding: 5px 10px;
-        display: inline-block;
-        transition: 1s;
-        font-family: "Indie Flower", cursive;
-        text-decoration: none; }
-        .colorBoton:hover {
-            color: #e86686; 
-            border: 1px solid gray;}
-            
-.button{
-    background-color: black;
-}
-
-header {
+    justify-content: center;
+  }
+  .logo-img {
+    width: 130px;
+    height: 130px;
+  }
+  header h1 {
+    margin: 15px;
+  }
+  .btn-drop {
     background-color: #333;
-    padding: 20px;
-    color: #fff;
-    height: 240px;
-    }
-    header h1 {
-    font-size: 48px;
-    margin: 0;
-    }
-
-    header div{
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-        height: 100px;
-    }
-
-    div#clima{
-        display: flex;
-        flex-direction: column;
-        height: 200px;
-        margin: 5px;
-        border: 1px solid gray;
-        padding: 10px;
-        font-size: 10px;
-        width: 200px;
-    }
-    div#clima h2{
-        color: #fff;
-        font-size: 15px;
-    }
-    div#clima div{
-        display: flex;
-        flex-direction: column;
-        width: 100px;
-    }
-    .pronostico{
-        height: 100px;
-        margin: 5px;
-        font-size: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    .pronostico div{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-    }
-
-    .pronostico p{
-        font-size: 10px;
-    }
-    
-    
-    .pronostico img{
-        height: 50px;
-        width: 50px;
-    }
-    
-
-
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    }
-    h2 {
-    font-size: 32px;
-    color: #333;
-    }
-
-
-    footer {
-        background-color: #222;
-        padding: 20px;
-        color: #fff;
-        text-align: center;
-    }
-    footer p {
-        margin: 0;
-        }
-
-.carrito{
-    background-color: #333;
-    padding: 20px;
-    color: #fff;
-    font-size: 28px;
-    margin: 0;
-    text-align: center;
+    border: none;
+    margin: 15px;
+    padding: 15px;
+  }
 }
 
-.totalCompra{
-    text-align: center;
+@media (max-width: 985px) {
+  #navbarList {
+    transform: translateX(-30%);
+  }
 }
 
-.botonesCompra{
+@media (max-width: 845px) {
+.marca{
+    width: 100%;
+}
+}
+
+
+@media (max-width: 770px) {
+  .footer {
+    height: 230px;
+  }
+  .logo-img-footer {
+    width: 60px;
+    height: 60px;
+  }
+  .footer-up {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    margin: 5px;
+    gap: 20px;
+  }
 }
 
-@media (max-width: 800px){
-div#clima{
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-    margin: 5px;
-    border: 1px solid gray;
-    padding: 10px;
-    font-size: 10px;
+@media (max-width: 650px) {
+  #navbarList {
+    left: 50%; /* Posiciona el menú en el centro de la pantalla */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    top: calc(75% + 10px);
+  }
+  .logo-img {
     width: 100px;
+    height: 100px;
+  }
+  #menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 75px;
+    height: 220px;
+  }
+  header {
+    height: 450px;
+    width: 100%;
+  }
+  .header h1 {
+    padding-bottom: 55px;
+    margin-bottom: 55px;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
+
+@media (max-width: 450px) {
+  .footer-up {
+    padding: 3px;
+    margin: 3px;
+    gap: 13px;
+  }
+  .footer-nav {
+    font-size: 10px;
+  }
+  .brand{
+    width: 30px;
+  }
+}
+
+@media (max-width: 350px) {
+  .footer-nav {
+    font-size: 8px;
+  }
 }

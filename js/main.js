@@ -8,7 +8,7 @@ Swal.fire({
 }).then((result) => {
   if (result.isConfirmed && result.value) {
     Swal.fire({
-      title: 'Bienvenido a Dry Law',
+      title: 'Bienvenido a la tienda de La Bodega',
       text: 'Vinoteca Online',
       customClass: {
         confirmButton: 'estilo-boton'
@@ -131,14 +131,14 @@ Swal.fire({
   }
 
   // Crear Productos
-  const whiskyJDO = new Producto(1, "Whisky", "Jack Daniels", "N° 7", 13500, "../img/WhiskyJackDaniels.png");
-  const whiskyJWR = new Producto(2, "Whisky", "Jhonnie Walker", "Red", 7000, "../img/WhiskyJhonnieWalkerRed.png");
-  const whiskyJWB = new Producto(3, "Whisky", "Jhonnie Walker", "Black", 15000, "../img/WhiskyJhonnieWalkerBlack.png");
-  const ginTO = new Producto(4, "Gin", "Tanqueray", "Original", 8000, "../img/GinTanquerayOriginal.png");
+  const whiskyJDO = new Producto(1, "Whisky", "Jack Daniels", "N° 7", 13500, "/img/WhiskyJackDaniels.png");
+  const whiskyJWR = new Producto(2, "Whisky", "Jhonnie Walker", "Red", 7000, "/img/WhiskyJhonnieWalkerRed.png");
+  const whiskyJWB = new Producto(3, "Whisky", "Jhonnie Walker", "Black", 15000, "/img/WhiskyJhonnieWalkerBlack.png");
+  const ginTO = new Producto(4, "Gin", "Tanqueray", "Original", 8000, "/img/GinTanquerayOriginal.png");
   const ginBS = new Producto(5, "Gin", "Bombay", "Shapire", 9000, "../img/GinBombayShapire.png");
-  const ganciaAO = new Producto(6, "Gancia", "Americano", "Original", 1000, "../img/GanciaAmericanoOriginal.png");
-  const fernetBO = new Producto(7, "Fernet" , "Branca" , "Original", 2200, "../img/FernetBrancaOriginal.png");
-  const vodkaAO = new Producto(8, "Vodka" , "Absolut" , "Original", 6000, "../img/VodkaAbsolutOriginal.png");
+  const ganciaAO = new Producto(6, "Gancia", "Americano", "Original", 1000, "/img/GanciaAmericanoOriginal.png");
+  const fernetBO = new Producto(7, "Fernet" , "Branca" , "Original", 2200, "/img/FernetBrancaOriginal.png");
+  const vodkaAO = new Producto(8, "Vodka" , "Absolut" , "Original", 6000, "/img/VodkaAbsolutOriginal.png");
 
   // Array's
   const productos = [whiskyJDO, whiskyJWR, whiskyJWB, ginTO, ginBS, ganciaAO, fernetBO, vodkaAO];
@@ -252,9 +252,9 @@ Swal.fire({
       const card = document.createElement("div");
       card.classList.add("col-xl-3", "col-md-6");
       card.innerHTML = `
-        <div class="card">
-          <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.bebida}">
-          <div>
+      <div class="card">
+      <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.bebida}">
+      <div>
             <h5>${producto.bebida}</h5>
             <h5>${producto.marca}</h5>
             <h5>${producto.variedad}</h5>
@@ -379,13 +379,13 @@ Swal.fire({
           if (selectedPaymentMethod === "transferencia") {
             Swal.fire(
               'Deberá realizar la transferencia al CBU N° 0202445920000422492248',
-              'Titular de la cuenta: Dry Law SAS',
+              'Titular de la cuenta: La Bodega SRL',
               'Banco Santander Río'
             );
           } else if (selectedPaymentMethod === "deposito") {
             Swal.fire(
               'Deberá realizar el depósito en la cuenta N° 264-337792/8',
-              'Titular de la cuenta: Dry Law SAS',
+              'Titular de la cuenta: La Bodega SRL',
               'Banco Santander Río'
             );
           } else if (selectedPaymentMethod === "tarjeta") {
@@ -415,39 +415,35 @@ Swal.fire({
   );
     } else {
     Swal.fire(
-    'Acceso denegado', 'Debes ser mayor de 18 años para ingresar a este sitio', 'error'
+    'Acceso denegado', 'Debes ser mayor de 18 años para poder realizar compras en la tienda', 'error'
     )};
     }
 
 );
 
-// Clima
-const showClima = async () => {
-  try{
-    const response = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/11222?apikey=CbMcAbFO52Ebvc7evkJLr0JPp4KL3OYx&language=es-ar`);
-    const data = await response.json();
 
-    const clima = document.getElementById('clima');
-    const pronosticoElement = clima.querySelector('.pronostico');
-    
-    if (Array.isArray(data) && data.length > 0) {
-      const forecast = data[0];
-      const forecastElement = document.createElement('div');
-      forecastElement.innerHTML = `
-        <img src="https://developer.accuweather.com/weather-icons/${forecast.WeatherIcon}.svg" alt="${forecast.WeatherText}">
-        <div>
-          <h3>${forecast.WeatherText}</h3>
-          <p>Temperatura: ${forecast.Temperature.Metric.Value} ${forecast.Temperature.Metric.Unit}</p>
-        </div>`;
-      
-      pronosticoElement.appendChild(forecastElement);
-    } else {
-      console.log('No hay información válida.');
-    }
-  } catch (error) {
-    console.log('Ocurrió un error al obtener el clima:', error);
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.getElementById('toggleNavbar');
+  const navbarList = document.getElementById('navbarList');
+
+  toggleButton.addEventListener('click', function () {
+      if (navbarList.style.display === 'none' || navbarList.style.display === '') {
+          navbarList.style.display = 'flex';
+      } else {
+          navbarList.style.display = 'none';
+      }
+  });
+});
+
+window.addEventListener('resize', function () {
+  const navbarList = document.getElementById('navbarList');
+  const toggleButton = document.getElementById('toggleNavbar');
+  
+  if (window.innerWidth > 1050) {
+      navbarList.style.display = 'flex'; // Mostrar la lista de navegación en pantallas grandes
+      toggleButton.style.display = 'none'; // Ocultar el botón de dropdown en pantallas grandes
+  } else {
+      navbarList.style.display = 'none'; // Ocultar la lista de navegación en pantallas pequeñas
+      toggleButton.style.display = 'block'; // Mostrar el botón de dropdown en pantallas pequeñas
   }
-}
-
-showClima();
-
+});

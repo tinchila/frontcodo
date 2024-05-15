@@ -30,23 +30,32 @@ const brands = [
   }
   
   document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      if (validateForm()) {
-          document.getElementById('messageNotification').style.display = 'block';
-          setTimeout(function() {
-              document.getElementById('messageNotification').style.display = 'none';
-          }, 3000);
-      } else {
-          alert('Por favor, complete todos los campos requeridos.');
-      }
-  });
-  
+    event.preventDefault();
+    if (validateForm()) {
+        Swal.fire({
+            title: 'Mensaje enviado',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('contactForm').reset();
+            }
+        });
+    } else {
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, complete todos los campos requeridos.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+    }
+});
 
 function validateForm() {
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const type = document.getElementById('type').value;
-    const preference = document.querySelector('input[name="preference"]:checked');
+    const preference = document.getElementById('preference').value;
     const message = document.getElementById('message').value.trim();
 
     return name && email && type && preference && message;

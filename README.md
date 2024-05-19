@@ -7,7 +7,7 @@ Tampoco aparecía la flecha ni el menú dropdown cuando se achicaba, también er
 Puse un par de imgs y un texto... (el texto se ajusta solo, las imgs no logré hacerlas responsive).
 TIENDA
 Cambié para que en la pestaña aparezca "Tienda" en vez de "La Bodega"
-Tampoco aparecía la flecha ni el menú dropdown cuando se achicaba, también era la ruta pero cuando se despliega el menú queda por debajo del producto(adjunto img). Traté se arreglarlo con un z-index pero no funcionó.
+Tampoco aparecía la flecha ni el menú dropdown cuando se achicaba, también era la ruta pero cuando se despliega el menú queda por debajo del producto. Traté se arreglarlo con un z-index pero no funcionó.
 De la página de la tienda habría que arreglar eso de las imgs. No entendí mucho el body... para chequear las rutas.
 FORMULARIO
 El formulario me aparece todo bien. 

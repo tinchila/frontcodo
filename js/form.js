@@ -60,3 +60,29 @@ function validateForm() {
 
     return name && email && type && preference && message;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('toggleNavbar');
+    const navbarList = document.getElementById('navbarList');
+
+    toggleButton.addEventListener('click', function () {
+        if (navbarList.style.display === 'none' || navbarList.style.display === '') {
+            navbarList.style.display = 'flex';
+        } else {
+            navbarList.style.display = 'none';
+        }
+    });
+});
+
+window.addEventListener('resize', function () {
+    const navbarList = document.getElementById('navbarList');
+    const toggleButton = document.getElementById('toggleNavbar');
+    
+    if (window.innerWidth > 1050) {
+        navbarList.style.display = 'flex'; // Mostrar la lista de navegación en pantallas grandes
+        toggleButton.style.display = 'none'; // Ocultar el botón de dropdown en pantallas grandes
+    } else {
+        navbarList.style.display = 'none'; // Ocultar la lista de navegación en pantallas pequeñas
+        toggleButton.style.display = 'block'; // Mostrar el botón de dropdown en pantallas pequeñas
+    }
+});

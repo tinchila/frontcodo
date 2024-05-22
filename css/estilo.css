@@ -463,7 +463,7 @@ iframe {
 
   .navbar-list {
     display: flex;
-    flex-direction: column; /* Cambiar dirección a vertical */
+    flex-direction: column;
     gap: 30px;
     justify-content: space-around;
     font-size: 13px;
@@ -562,9 +562,9 @@ iframe {
 
 @media (max-width: 650px) {
   #navbarList {
-    left: 50%; /* Posiciona el menú en el centro de la pantalla */
-    transform: translateX(-50%); /* Centra horizontalmente */
-    top: calc(75% + 10px);
+    left: 50%; 
+    transform: translateX(-50%);
+    top: calc(55% + 10px);
   }
   .logo-img {
     width: 100px;
@@ -579,7 +579,7 @@ iframe {
     height: 220px;
   }
   header {
-    height: 450px;
+    height: 670px;
     width: 100%;
   }
   .header h1 {
@@ -610,11 +610,8 @@ iframe {
   }
   .about__text {
     padding-top: 19px;
+    margin-bottom: 35px;
 }
-.about {
-  height: 130vh;
-}
-
 .location__text {
     margin-top: 45rem;
 }
@@ -625,6 +622,9 @@ img {
 
 iframe {
     max-width: 100%;
+}
+.nuestro-local{
+  margin-top: 35px;
 }
 }
 
